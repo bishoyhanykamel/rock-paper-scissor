@@ -16,4 +16,33 @@ function getPlayerChoice() {
     do {
         userChoice = prompt("Choose 'Rock', 'Paper', or 'Scissors'").toLowerCase();
     } while (userChoice !== ROCK && userChoice !== PAPER && userChoice !== SCISSORS);
+    return userChoice;
+}
+
+
+function getWinner(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) return 'Tie!';
+    switch (playerChoice) {
+        case ROCK:
+            if (computerChoice === SCISSORS)
+                return true;
+            else
+                return false;
+            break;
+
+        case PAPER:
+            if (computerChoice === ROCK)
+                return true;
+            else
+                return false;
+        
+        case SCISSORS:
+            if (computerChoice === PAPER)
+                return true;
+            else
+                return false;
+
+        default:
+            return undefined;
+    }
 }
