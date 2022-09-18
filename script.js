@@ -3,6 +3,7 @@
 const ROCK = 'rock';
 const PAPER = 'paper';
 const SCISSORS = 'scissors';
+const TIE = 'Tie!';
 
 let getComputerChoice = function() {
     let randomValue = Math.floor(Math.random() * 100) + 1;
@@ -21,7 +22,7 @@ function getPlayerChoice() {
 
 
 function getWinner(playerChoice, computerChoice) {
-    if (playerChoice === computerChoice) return 'Tie!';
+    if (playerChoice === computerChoice) return TIE;
     switch (playerChoice) {
         case ROCK:
             if (computerChoice === SCISSORS)
@@ -45,4 +46,11 @@ function getWinner(playerChoice, computerChoice) {
         default:
             return undefined;
     }
+}
+
+
+function playRound(playerChoice = getPlayerChoice(), computerChoice = getComputerChoice()) {
+    let playerWon = getWinner(playerChoice, computerChoice);
+    if (playerWon === TIE) return console.log(`${TIE}`);
+    playerWon ? console.log(`You win! ${playerChoice} beats ${computerChoice}`) : console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
 }
