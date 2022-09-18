@@ -21,7 +21,7 @@ function getPlayerChoice() {
 }
 
 
-function getWinner(playerChoice, computerChoice) {
+function getWinner(playerChoice , computerChoice) {
     if (playerChoice === computerChoice) return TIE;
     switch (playerChoice) {
         case ROCK:
@@ -48,9 +48,36 @@ function getWinner(playerChoice, computerChoice) {
     }
 }
 
-
-function playRound(playerChoice = getPlayerChoice(), computerChoice = getComputerChoice()) {
-    let playerWon = getWinner(playerChoice, computerChoice);
-    if (playerWon === TIE) return console.log(`${TIE}`);
-    playerWon ? console.log(`You win! ${playerChoice} beats ${computerChoice}`) : console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
+function computeGameWinner(playerWins, computerWins) {
+    if (playerWins > computerWins)
+        console.log("You win!");
+    else if (playerWins < computerWins)
+        console.log("The computer wins!");
+    else 
+        console.log("You and the computer tie!");
 }
+
+function playGame() {
+    let playerWins = 0, computerWins = 0;
+    for (let i = 1; i <= 5; i++) {
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        let playerWon = getWinner(playerChoice, computerChoice);
+        if (playerWon === TIE) {
+            console.log('Tie round!');
+            continue;
+        }
+        if (playerWon) {
+            playerWins++;
+            console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+        }
+        else {
+            computerWins++;
+            console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
+        }
+    }
+    computeGameWinner(playerWins, computerWins);
+}
+
+
+playGame();
