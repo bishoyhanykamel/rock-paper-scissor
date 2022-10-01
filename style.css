@@ -58,8 +58,7 @@ div {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
-    gap: 4em;
+    gap: 6em;
 }
 
 .winning-text {
