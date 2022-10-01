@@ -91,3 +91,21 @@ div {
     outline: 2px solid yellow;
     transform: scale(1.3);
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 24px;
+    font-size: 1.3em;
+    background-color: darkslategrey;
+    color: white;
+    text-align: center;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+}
