@@ -5,6 +5,9 @@ const PAPER = 'paper';
 const SCISSORS = 'scissors';
 const TIE = 'Tie!';
 
+const playerOptions = document.querySelectorAll('#player div');
+const computerOptions = document.querySelectorAll('#computer div');
+
 let getComputerChoice = function() {
     let randomValue = Math.floor(Math.random() * 100) + 1;
     if (randomValue <= 30) return ROCK;
@@ -81,3 +84,17 @@ function playGame() {
 
 
 //playGame();
+
+playerOptions.forEach( (choice) => {
+    choice.addEventListener('click', (e) => {
+        console.log(e.target['alt'] === undefined? e.target['id'] : e.target['alt']);
+        e.stopPropagation();
+    });
+} );
+
+computerOptions.forEach( (choice) => {
+    choice.addEventListener('click', (e) => {
+        console.log(e.target['alt'] === undefined? e.target['id'] : e.target['alt']);
+        e.stopPropagation();
+    });
+} );
