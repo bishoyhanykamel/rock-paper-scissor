@@ -10,6 +10,7 @@ body {
 }
 div {
     margin-top: 0.8em;
+    margin-bottom: 1em;
 }
 .container {
     width: 80%;
@@ -32,7 +33,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 16em;
+    gap: 10em;
     flex-wrap: wrap;
 }
 
@@ -57,6 +58,7 @@ div {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
     gap: 4em;
 }
 
@@ -72,4 +74,16 @@ div {
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px cadetblue;
+}
+
+.player-choices div {
+    outline: 2px solid black;
+    outline-offset: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.hidden {
+    visibility: hidden;
 }
