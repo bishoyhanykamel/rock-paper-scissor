@@ -7,6 +7,9 @@ body {
     display: flex;
     justify-content: center;
 }
+div {
+    margin-top: 0.8em;
+}
 .container {
     width: 80%;
     margin-top: 2em;
@@ -21,7 +24,7 @@ body {
 
 .img-button {
     height: auto;
-    width: 64px;
+    width: 72px;
 }
 
 .players-container {
@@ -30,4 +33,33 @@ body {
     justify-content: center;
     gap: 16em;
     flex-wrap: wrap;
+}
+
+.player, .playerdata {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    align-items: center;
+}
+
+.player-left, .player-right {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+}
+
+.player-left {
+    flex-direction: row-reverse;
+}
+
+.player-choices {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.winning-text {
+    color: green;
+    font-size: 3em;
 }
