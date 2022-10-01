@@ -71,4 +71,5 @@ div {
     width: 2em;
     text-align: center;
     border-radius: 5px;
+    box-shadow: 2px 2px cadetblue;
 }
