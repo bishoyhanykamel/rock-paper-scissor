@@ -71,7 +71,7 @@ function playRound(pChoice) {
     let computerChoice = getComputerChoice();
     let playerWon = getWinner(playerChoice, computerChoice);
     if (playerWon === TIE) {
-        console.log('Tie round!');
+        tieRound();
         return;
     }
     if (playerWon) {
@@ -87,15 +87,33 @@ function playRound(pChoice) {
     computeGameWinner();
 }
 
-function computeGameWinner() {
-    if (playerWins >= 5) {
+function updateWinnerText(winnerText) {
+    winnerText.style.color = 'green';
+    winnerText.innerText = 'Winner!';
+    winnerText.classList.toggle('hidden');
+    gameEnded = true;
+}
+
+function tieRound() {
+    playerWinText.style.color = 'cadetblue';
+    computerWinText.style.color = 'cadetblue';
+    playerWinText.textContent = 'Tie!';
+    computerWinText.textContent = 'Tie!';
+    playerWinText.classList.toggle('hidden');
+    computerWinText.classList.toggle('hidden');
+
+    setTimeout(() => {
         playerWinText.classList.toggle('hidden');
-        gameEnded = true;
-    }
-    else if (computerWins >= 5) {
         computerWinText.classList.toggle('hidden');
-        gameEnded = true;
-    }
+    }, 450);
+}
+
+function computeGameWinner() {
+    if (playerWins >= 5) 
+        updateWinnerText(playerWinText);
+    
+    else if (computerWins >= 5) 
+        updateWinnerText(computerWinText);
 }
 
 
