@@ -57,10 +57,18 @@ div {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 4em;
 }
 
 .winning-text {
     color: green;
     font-size: 3em;
+}
+
+.score {
+    font-size: 5em;
+    border: 2px solid cadetblue;
+    width: 2em;
+    text-align: center;
+    border-radius: 5px;
 }
