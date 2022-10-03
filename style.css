@@ -6,7 +6,8 @@
 body {
     font-family: 'Inconsolata', monospace;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 div {
     margin-top: 0.8em;
@@ -33,7 +34,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10em;
+    gap: 6em;
     flex-wrap: wrap;
 }
 
@@ -93,7 +94,6 @@ div {
 }
 
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
